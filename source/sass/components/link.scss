@@ -1,0 +1,20 @@
+.link {
+  padding: 10px;
+  transition: color $duration_03, opacity $duration_03;
+
+  svg {
+    transition: fill $duration_03, opacity $duration_03;
+  }
+
+  &:active {
+    opacity: $opacity;
+  }
+}
+
+@media (min-width: $no_mobile) {
+
+  .link:hover,
+  .link:focus {
+    color: var(--accent_main);
+  }
+}

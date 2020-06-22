@@ -1,0 +1,21 @@
+.button {
+  @include button;
+  @include flex_center(1);
+  width: 100%;
+  border-radius: $br;
+  color: var(--btn_text_white);
+  background-color: var(--accent_main);
+  transition: $transition;
+
+  &:active {
+    opacity: $opacity;
+  }
+}
+
+@media (min-width: $no_mobile) {
+
+  .button:hover,
+  .button:focus {
+    background-color: var(--btn_hover);
+  }
+}

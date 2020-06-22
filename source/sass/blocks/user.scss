@@ -1,0 +1,50 @@
+.user {
+  @include flex_center;
+  position: relative;
+
+}
+
+.user__img {
+  width: 40px;
+  height: 40px;
+  margin-right: 18px;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.user__toggle {
+  @include button;
+  @include font(14, 18);
+  @include flex_center;
+  position: relative;
+  min-width: 92px;
+  color: var(--text_dark);
+
+  &::before {
+    @include before;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+
+  span {
+    display: inline-block;
+    margin-right: 19px;
+  }
+
+  svg {
+    transition: fill $duration_03, transform $duration_03;
+  }
+}
+
+.user__toggle--click {
+  svg {
+    transform: rotate(-180deg);
+  }
+}
+
+// @media (min-width: $no_mobile) {
+
+// }

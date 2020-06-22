@@ -1,0 +1,10 @@
+.container {
+  @include container(1110, 30);
+}
+
+@media (max-width: $mobile_max) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
