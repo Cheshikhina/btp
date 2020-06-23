@@ -1,14 +1,12 @@
-.search {
-  width: 100%;
-  max-width: 350px;
-  height: 40px;
-  border-radius: $br_06;
+.footer_form {
 
   form {
     position: relative;
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
-    height: 100%;
     border-radius: $br_06;
     overflow: hidden;
   }
@@ -17,31 +15,31 @@
     @include visually_hidden;
   }
 
+  textarea,
   input {
-    @include search_input;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 12px 23px 13px;
+    @include footer_input;
+    display: flex;
+    padding: 18px 23px 17px;
+    margin-bottom: 15px;
     background-color: var(--bg_light);
     border: none;
     -webkit-appearance: none;
     border-radius: 0;
-    border-radius: $br_06 0 0 $br_06;
+    border-radius: $br_04;
     outline: 0;
     resize: none;
     transition: $transition;
 
     @each $placeholder in $placeholders_dots {
       &::#{$placeholder} {
-        @include search_input(1);
+        @include footer_input(1);
         transition: opacity $duration_03;
       }
     }
 
     @each $placeholder in $placeholders_dot {
       &:#{$placeholder} {
-        @include search_input(1);
+        @include footer_input(1);
         transition: opacity $duration_03;
       }
     }
@@ -62,17 +60,28 @@
     }
   }
 
-  .search__toggle,
+  textarea {
+    width: 100%;
+    min-height: 123px;
+  }
+
+  input {
+    width: calc(50% - 15px);
+  }
+
   [type="submit"] {
     @include button;
     @include flex_center(1);
+    @include font(12, 15);
     position: relative;
-    min-width: 65px;
-    max-width: 65px;
-    height: 100%;
+    width: 100%;
+    max-width: 160px;
+    min-height: 50px;
+    margin-top: 7px;
+    font-weight: 700;
     color: var(--bg_white);
     background-color: var(--accent_main);
-    border-radius: 0 $br_06 $br_06 0;
+    border-radius: $br_04;
     transition: $transition;
 
     &::before {
@@ -86,77 +95,41 @@
       opacity: $opacity;
     }
   }
-
-  .search__toggle {
-    display: none;
-
-    &:active {
-      opacity: 1;
-    }
-  }
 }
 
-@media (max-width: $tablet_max) {
-  .search {
-    max-width: 35%;
-  }
+.footer_form__title {
+  @include footer_title;
+  margin: 0;
+  margin-bottom: 34px;
+}
+
+.footer_form__placeholder {
+  @include font(12, 15);
+  display: flex;
+  align-self: center;
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--text_lightest);
 }
 
 @media (max-width: $mobile_max) {
-  .search {
-    max-width: 65px;
+  .footer_form {
+    flex-direction: column;
 
-    form {
-      width: 65px;
-      margin-left: auto;
-    }
-
-    [button="submit"] {
-      border-radius: $br_06;
-    }
-
-    .search__toggle {
-      display: flex;
-      position: absolute;
-      border-radius: $br_06;
-      right: 0;
-      top: 0;
-      z-index: 20;
+    input {
+      width: calc(100%);
     }
   }
 
-  .search--open {
-    form {
-      width: 100%;
-      overflow: visible;
-      justify-content: flex-end;
-    }
-
-    input {
-      position: absolute;
-      right: 0;
-      width: 265px;
-      padding-right: 65px;
-    }
-
-    [type="submit"] {
-      border-radius: 0 $br_06 $br_06 0;
-      z-index: 10;
-    }
-
-    .search__toggle {
-      z-index: -10;
-      opacity: 0;
-    }
+  .footer_form__title {
+    margin-top: 15px;
   }
 }
 
 @media (min-width: $no_mobile) {
 
   [type="submit"]:hover,
-  [type="submit"]:focus,
-  .search__toggle:hover,
-  .search__toggle:focus {
+  [type="submit"]:focus {
     background-color: var(--btn_hover);
   }
 }

@@ -20,6 +20,7 @@
 @import "./components/button";
 @import "./components/image";
 @import "./components/link";
+@import "./components/flash";
 
 // blocks
 @import "./blocks/header";
@@ -27,6 +28,10 @@
 @import "./blocks/header_main";
 @import "./blocks/search";
 @import "./blocks/user";
-
-
 @import "./blocks/footer";
+@import "./blocks/footer_nav";
+@import "./blocks/footer_contact";
+@import "./blocks/footer_form";
+@import "./blocks/footer__pay";
+@import "./blocks/main";
+@import "./blocks/main_slider";

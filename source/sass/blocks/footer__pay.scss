@@ -1,0 +1,56 @@
+.footer__pay {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer__pay_links {
+  @include flex_center;
+  grid-column: 1/span 2;
+  justify-self: end;
+}
+
+.footer__pay_link {
+  padding: 5px;
+  color: var(--text_white);
+}
+
+.footer__pay_cards {
+  @include flex_center;
+  justify-self: end;
+}
+
+.footer__pay_card {
+  transition: opacity $duration_03;
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &+.footer__pay_card {
+    margin-left: 8px;
+  }
+}
+
+.footer__pay_img {
+  width: 19px;
+  height: 13.5px;
+}
+
+@media (max-width: $mobile_max) {
+  .footer__pay {
+    @include flex_center;
+    flex-direction: column;
+  }
+
+  .footer__pay_links {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: $no_mobile) {
+
+  .footer__pay_card:hover,
+  .footer__pay_card:focus {
+    opacity: 0.5;
+  }
+}

@@ -1,3 +1,16 @@
 .footer {
   flex: 0 0 auto;
+  color: var(--text_light);
+  background-color: var(--bg_dark);
+}
+
+.footer__inner {
+  padding-top: 89px;
+  padding-bottom: 41px;
+}
+
+@media (max-width: $mobile_max) {
+  .footer__inner {
+    padding-top: 30px;
+  }
 }

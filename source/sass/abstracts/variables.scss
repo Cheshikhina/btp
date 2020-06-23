@@ -31,6 +31,7 @@ html {
   --moon: #0A223D;
   --moon_hover: #F0EA7F;
   --sun: #EDE437;
+  --icon_mail: #BDBDBD;
 
   // changing
   --accent_main: #EC1F46;
@@ -44,7 +45,8 @@ html {
   --btn_text_white: #ffffff;
   --btn_slider_reviews: #828282;
   --btn_hover: #AD1732;
-  --logo: #0A223D;
+  --logo_header: #0A223D;
+  --logo_footer: #EC1F46;
 }
 
 html.dark {
@@ -53,15 +55,16 @@ html.dark {
   --accent_main: #F2B1BD;
   --text_black: #E5E5E5;
   --text_dark: #CCCCCC;
-  --text_light: #F1F2FA;
+  --text_light: #D9D9D9;
   --text_white: #E1F1FA;
-  --bg_dark: #3F628A;
-  --bg_light: #345070;
-  --bg_white: #22354A;
+  --bg_dark: #345070;
+  --bg_light: #283E57;
+  --bg_white: #0A223D;
   --btn_text_white: #22354A;
   --btn_slider_reviews: #A6A6A6;
   --btn_hover: #B3828B;
-  --logo: #F1F2FA;
+  --logo_header: #F1F2FA;
+  --logo_footer: #AD1732;
 }
 
 // @media screen and (prefers-color-scheme: light) {
@@ -131,7 +134,10 @@ $opacity_025: 0.25;
 $opacity: 0.87;
 $opacity_08: 0.8;
 
-$br: 8px;
+$br_03: 3px;
+$br_04: 4px;
+$br_06: 6px;
+$br_08: 8px;
 $bs_slider: 0 4px 4px rgba(var(--black), $opacity_025);
 
 $placeholders_dots: "-moz-placeholder",

@@ -124,3 +124,25 @@
     color: var(--text_dark) !important;
   }
 }
+
+@mixin footer_input($isPlaceholder: 0) {
+  @include font(12, 15);
+  color: var(--text_dark);
+
+  @if ($isPlaceholder==1) {
+    @include font(12, 15);
+    color: var(--text_light) !important;
+  }
+}
+
+@mixin footer_title {
+  @include font(18, 23);
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text_white);
+
+  @media (max-width: $mobile_max) {
+    text-align: center;
+  }
+}
