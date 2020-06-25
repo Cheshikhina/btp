@@ -1,5 +1,5 @@
 @function rem($size) {
-  @return $size*1px / $main_font*1rem;
+  @return ($size / $main_font)*1rem;
 }
 
 @function decimal_round($number, $digits: 0, $mode: round) {
@@ -79,17 +79,17 @@
   cursor: pointer;
 }
 
-@mixin background($name, $type, $background_color) {
+@mixin background($name, $type, $background_color: "false") {
   @if $background_color !='false' {
     background-color: $background_color;
   }
 
   background-repeat: no-repeat;
-  background-image: url("../img/#{$name}__desktop@1x.#{$type}");
+  background-image: url("../img/#{$name}@1x.#{$type}");
 
   @media (min-resolution: $retina_dpi),
   (min-resolution: $retina_dppx) {
-    background-image: url("../img/#{$name}__desktop@2x.#{$type}");
+    background-image: url("../img/#{$name}@2x.#{$type}");
   }
 }
 
@@ -116,27 +116,27 @@
 }
 
 @mixin search_input($isPlaceholder: 0) {
-  @include font(12, 15);
+  @include font($fs_12, $lh_15);
   color: var(--text_dark);
 
   @if ($isPlaceholder==1) {
-    @include font(12, 15);
+    @include font($fs_12, $lh_15);
     color: var(--text_dark) !important;
   }
 }
 
 @mixin footer_input($isPlaceholder: 0) {
-  @include font(12, 15);
+  @include font($fs_12, $lh_15);
   color: var(--text_dark);
 
   @if ($isPlaceholder==1) {
-    @include font(12, 15);
+    @include font($fs_12, $lh_15);
     color: var(--text_light) !important;
   }
 }
 
 @mixin footer_title {
-  @include font(18, 23);
+  @include font($fs_18, $lh_23);
   margin: 0;
   font-weight: 700;
   text-transform: uppercase;

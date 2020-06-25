@@ -1,21 +1,21 @@
 .mark {
-  @include font(8, 10);
-  padding: 8px 6px 7px 7px;
+  @include font($fs_8, $lh_10);
+  padding: 8px 2px 7px;
   font-weight: 600;
   background-color: var(--accent_main);
   color: var(--btn_text_white);
   border-radius: $br_04;
-  text-align: left;
+  text-align: center;
 }
 
 .mark--main {
-  @include font(10, 13);
+  @include font($fs_10, $lh_13);
   padding: 3px 9px 4px;
   border-radius: $br_03;
 }
 
 .mark--card_big {
-  @include font(12, 15);
+  @include font($fs_12, $lh_15);
   padding: 8px 11px 7px;
   border-radius: 0 $br_04 $br_04 0;
 }

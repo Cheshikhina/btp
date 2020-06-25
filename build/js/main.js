@@ -21409,6 +21409,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/menu */ "./source/js/modules/menu.js");
 /* harmony import */ var _modules_colorTheme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/colorTheme */ "./source/js/modules/colorTheme.js");
 /* harmony import */ var _modules_rating__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/rating */ "./source/js/modules/rating.js");
+/* harmony import */ var _modules_tab__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/tab */ "./source/js/modules/tab.js");
+
 
 
 
@@ -21427,6 +21429,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   Object(_modules_colorTheme__WEBPACK_IMPORTED_MODULE_7__["default"])();
   Object(_modules_rating__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  Object(_modules_tab__WEBPACK_IMPORTED_MODULE_9__["default"])('about_hotel');
   document.querySelector('.search__toggle').addEventListener('click', function () {
     document.querySelector('.search__toggle').parentNode.parentNode.classList.add('search--open');
   });
@@ -21675,6 +21678,7 @@ var scroll = function scroll() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/js/swiper.esm.bundle.js");
 
+var TABLET_MEDIA = '(max-width: 1024px)';
 
 if (document.querySelector('.main_slider')) {
   var mainSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main_slider', {
@@ -21688,12 +21692,114 @@ if (document.querySelector('.main_slider')) {
     navigation: {
       nextEl: '.main_slider__btn--next',
       prevEl: '.main_slider__btn--prev'
-    },
-    autoplay: {
-      delay: 7000
+    } // autoplay: {
+    //   delay: 7000,
+    // },
+
+  });
+}
+
+var tabsSlider;
+
+function sliderInit() {
+  tabsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.about_hotel__tabs', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    pagination: {
+      clickable: true
     }
   });
 }
+
+if (window.matchMedia(TABLET_MEDIA).matches) {
+  sliderInit();
+}
+
+var resizeHandlerSlider = function resizeHandlerSlider() {
+  if (!window.matchMedia(TABLET_MEDIA).matches) {
+    if (tabsSlider) {
+      tabsSlider.destroy();
+    }
+  } else {
+    sliderInit();
+  }
+};
+
+window.addEventListener('resize', resizeHandlerSlider);
+
+/***/ }),
+
+/***/ "./source/js/modules/tab.js":
+/*!**********************************!*\
+  !*** ./source/js/modules/tab.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.string.split */ "./node_modules/core-js/modules/es.string.split.js");
+/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+var tab = function tab(tabName) {
+  var activeEl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var tabs = document.querySelectorAll("[data-tabs=".concat(tabName, "]")),
+      contents = document.querySelectorAll("[data-content=".concat(tabName, "]")),
+      tabClass = tabs[0].getAttribute('class').split(' ')[0] + '--active',
+      contentClass = contents[0].getAttribute('class').split(' ')[0] + '--active';
+
+  function showActiveTab() {
+    var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+    tabs.forEach(function (tab) {
+      if (tab.classList.contains(tabClass)) {
+        tab.classList.remove(tabClass);
+      }
+    });
+    contents.forEach(function (content) {
+      if (content.classList.contains(contentClass)) {
+        content.classList.remove(contentClass);
+      }
+    });
+
+    if (index == false) {
+      tabs[activeEl].classList.add(tabClass);
+      contents[activeEl].classList.add(contentClass);
+    } else {
+      tabs[index].classList.add(tabClass);
+      contents[index].classList.add(contentClass);
+    }
+  }
+
+  function clickHandlerTabs(evt) {
+    var clickEl;
+    evt.preventDefault();
+
+    for (var i = 0; i < tabs.length; i++) {
+      if (evt.target == tabs[i]) {
+        clickEl = i;
+      }
+    }
+
+    showActiveTab(clickEl);
+  }
+
+  showActiveTab();
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', clickHandlerTabs);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (tab);
 
 /***/ })
 

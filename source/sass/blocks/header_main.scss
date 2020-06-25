@@ -27,7 +27,7 @@
 }
 
 .header_main__cart_count {
-  @include font(10, 10);
+  @include font($fs_10, $lh_10);
   @include flex_center(1);
   position: absolute;
   top: 0;

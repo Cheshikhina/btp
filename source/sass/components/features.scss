@@ -1,0 +1,134 @@
+.features {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 18px 24px;
+  padding-top: 0;
+  background-color: var(--bg_white);
+
+}
+
+.features__title {
+  @include font($fs_14, $lh_18);
+  width: calc(100% + 24px*2);
+  min-height: 50px;
+  margin: 0 -24px;
+  margin-bottom: 27px;
+  padding: 16px 24px;
+  color: var(--text_white);
+  font-weight: 700;
+  background-color: var(--bg_dark);
+}
+
+.features__list {
+  @include list;
+
+  li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 21px;
+
+    &::before {
+      @include before;
+      width: 18px;
+      height: 18px;
+      top: 0;
+      left: 0;
+      background-color: var(--tick);
+      border-radius: 50%;
+    }
+
+    &::after {
+      @include before;
+      width: 8px;
+      height: 6px;
+      top: 6px;
+      left: 5px;
+      background-image: url("../img/tick.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.features__list--small {
+  max-width: calc(50% - 15px);
+}
+
+.features__inner_line {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &+.features__inner_line {
+    position: relative;
+    margin-top: 54px;
+
+    &::before {
+      @include before;
+      width: 100%;
+      height: 1px;
+      top: -32px;
+      left: 0;
+      right: 37px;
+      background-image: url("../img/line.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.features__inner {
+  width: calc(100% / 3);
+  align-self: baseline;
+  padding-right: 13px;
+}
+
+.features__subtitle {
+  @include font($fs_13, $lh_16);
+  font-weight: 600;
+  color: var(--accent_main);
+  margin: 0;
+  margin-bottom: 21px;
+}
+
+.features__calendar {
+  @include font($fs_14, $lh_18);
+  position: relative;
+  margin: 0;
+  padding-left: 39px;
+
+  &::before {
+    @include before;
+    width: 18px;
+    height: 18px;
+    top: 0;
+    left: 0;
+    background-image: url("../img/calendar.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+html.dark {
+  .features__calendar::before {
+    background-image: url("../img/calendar_dark.svg");
+  }
+}
+
+.features__remark {
+  @include font($fs_10, $lh_13);
+  width: 100%;
+  margin-top: 20px;
+  padding-left: 40px;
+  font-style: italic;
+}
+
+.features--two_calendar {
+  justify-content: flex-start;
+
+  &>*:not(.features__remark):not(.features__title) {
+    width: calc(100% / 3);
+  }
+}

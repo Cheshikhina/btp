@@ -16,7 +16,7 @@
 
 .user__toggle {
   @include button;
-  @include font(14, 18);
+  @include font($fs_14, $lh_18);
   @include flex_center;
   position: relative;
   min-width: 92px;

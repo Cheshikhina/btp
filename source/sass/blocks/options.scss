@@ -1,0 +1,107 @@
+.options {
+  @include flex_center;
+  font-family: "Nunito", sans-serif;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 29px 29px 26px 26px;
+  background-color: var(--bg_dark);
+  color: var(--text_white);
+  border-radius: $br_08;
+}
+
+.options__price {
+  @include font($fs_10, $lh_14);
+  margin: 0;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.options__price_number {
+  @include font($fs_24, $lh_33);
+  position: relative;
+  display: block;
+  font-weight: 800;
+  padding-left: 21px;
+
+  &::before {
+    @include before;
+    content: "$";
+    left: 0;
+    top: 0;
+  }
+}
+
+.options__price_text {
+  @include font($fs_12, $lh_16);
+  display: block;
+}
+
+.options__box {
+  display: flex;
+  flex-direction: column;
+}
+
+.options__hotel {
+  @include font($fs_12, $lh_16);
+  position: relative;
+  margin: 0;
+  padding-left: 23px;
+
+  &::before {
+    @include before;
+    width: 14px;
+    height: 14px;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
+  }
+
+  &+.options__hotel {
+    margin-top: 8px;
+  }
+}
+
+.options__hotel--guest::before {
+  background-image: url("../img/guest.svg");
+}
+
+.options__hotel--room::before {
+  background-image: url("../img/room.svg");
+}
+
+.options__booking {
+  @include flex_center;
+  @include font($fs_18, $lh_25);
+  justify-content: space-between;
+  width: 100%;
+  margin: 9px 0 17px;
+  font-weight: 600;
+}
+
+// .options__booking_text {}
+
+.options__booking_link {
+  @include flex_center;
+  padding: 0;
+  color: var(--text_white);
+
+  svg {
+    order: -1;
+    margin-right: 8px;
+  }
+}
+
+.options__btn {
+  @include font($fs_14, $lh_19);
+  padding: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: $mobile_max) {
+  .options__btn {
+    @include container(320);
+    padding: 13px;
+  }
+}

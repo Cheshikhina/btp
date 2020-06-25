@@ -1,6 +1,6 @@
 .main {
   color: var(--text_dark);
-  margin-bottom: 20px;
+  margin-bottom: 67px;
 }
 
 .main__head {
@@ -24,7 +24,7 @@
 }
 
 .main__title {
-  @include font(24, 30);
+  @include font($fs_24, $lh_30);
   display: inline;
   vertical-align: middle;
   margin: 0;
@@ -53,17 +53,127 @@
     margin-top: 2px;
 
     span {
-      @include font(14, 18);
+      @include font($fs_14, $lh_18);
     }
   }
 }
 
 .main__info {
   display: grid;
-  grid-template: repeat(2, auto) / repeat(2, auto);
-  grid-gap: 27px 30px;
+  grid-template: repeat(2, auto) / 65.586% 31.532%;
+  grid-gap: 27px 2.882%;
 }
 
 .main__slider_wrap {
   grid-row: 1/span 2;
+}
+
+.main__map {
+  @include background("map", "jpg");
+  background-size: cover;
+  height: 213px;
+}
+
+@media (max-width: $tablet_max) {
+  .main__info {
+    @include flex_center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .main__slider_wrap {
+    width: 100%;
+    height: 450px;
+    margin-bottom: 20px;
+  }
+
+  .main__options {
+    order: 2;
+    width: calc(50% - 10px);
+  }
+
+  .main__map {
+    align-self: stretch;
+    height: auto;
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: $mobile_max) {
+  .main {
+    margin-bottom: 30px;
+  }
+
+  .main__head {
+    flex-direction: column;
+  }
+
+  .main__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main__rating_hotel {
+    margin-bottom: 30px;
+
+    span {
+      height: 15px;
+      width: 15px;
+      margin-left: 5px;
+      background-size: contain;
+    }
+  }
+
+  .main__title {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .main__mark {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+  }
+
+  .main__text {
+    margin-bottom: 20px;
+  }
+
+  .main__rating_user {
+    max-width: inherit;
+    padding: 10px 15px;
+    margin-left: auto;
+
+    p {
+      @include flex_center;
+      margin: 0;
+      margin-left: 10px;
+    }
+  }
+
+  .main__info {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main__slider_wrap {
+    height: auto;
+  }
+
+  .main__options {
+    order: -1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .main__map {
+    align-self: stretch;
+    height: 0;
+    padding-bottom: 61%;
+    width: 100%;
+  }
 }

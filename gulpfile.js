@@ -155,6 +155,7 @@ function serve() {
   gulp.watch(path.watch.sprite, gulp.series(sprite, copy, html)).on('change', refresh);
   gulp.watch(path.watch.html, gulp.series(html)).on('change', refresh);
   gulp.watch(path.watch.js, gulp.series(script)).on('change', refresh);
+  gulp.watch(path.src.img, gulp.series(copyImg)).on('change', refresh);
 }
 
 function images() {
@@ -317,6 +318,16 @@ function copy() {
     })
     .pipe(gulp.dest(path.dist));
 }
+
+function copyImg() {
+  return gulp.src([
+      path.src.copyImg,
+    ], {
+      base: path.base
+    })
+    .pipe(gulp.dest(path.dist));
+}
+
 
 function clean() {
   return del(path.dist);
