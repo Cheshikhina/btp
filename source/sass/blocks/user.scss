@@ -8,10 +8,9 @@
   width: 40px;
   height: 40px;
   margin-right: 18px;
-
-  img {
-    border-radius: 50%;
-  }
+  border-radius: 50%;
+  background-color: var(--accent_main);
+  overflow: hidden;
 }
 
 .user__toggle {

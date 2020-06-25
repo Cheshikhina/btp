@@ -19732,7 +19732,7 @@ if (document.querySelector('.main_slider')) {
   const mainSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main_slider', {
     slidesPerView: 1,
     spaceBetween: 30,
-    speed: 700,
+    speed: 600,
     loop: true,
     pagination: {
       clickable: true
@@ -19744,6 +19744,25 @@ if (document.querySelector('.main_slider')) {
     //   delay: 7000,
     // },
 
+  });
+}
+
+if (document.querySelector('.reviews_slider')) {
+  const mainSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews_slider__inner', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    speed: 600,
+    loop: true,
+    pagination: {
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.reviews_slider__btn--next',
+      prevEl: '.reviews_slider__btn--prev'
+    },
+    a11y: {
+      notificationClass: 'visually_hidden'
+    }
   });
 }
 

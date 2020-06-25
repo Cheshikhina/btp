@@ -25,6 +25,7 @@
 @import "./components/features";
 @import "./components/package";
 @import "./components/rating";
+@import "./components/review";
 
 // blocks
 @import "./blocks/header";
@@ -42,3 +43,5 @@
 @import "./blocks/options";
 @import "./blocks/about_hotel";
 @import "./blocks/packages";
+@import "./blocks/reviews";
+@import "./blocks/reviews_slider";

@@ -1,0 +1,17 @@
+.reviews {
+  margin-bottom: 70px;
+}
+
+.reviews__title {
+  @include title_big;
+  margin-bottom: 70px;
+}
+
+
+@media (max-width: $mobile_max) {
+
+  .reviews,
+  .reviews__title {
+    margin-bottom: 30px;
+  }
+}
