@@ -26,6 +26,7 @@
 @import "./components/package";
 @import "./components/rating";
 @import "./components/review";
+@import "./components/activity";
 
 // blocks
 @import "./blocks/header";
@@ -45,3 +46,5 @@
 @import "./blocks/packages";
 @import "./blocks/reviews";
 @import "./blocks/reviews_slider";
+@import "./blocks/subscription";
+@import "./blocks/activities";

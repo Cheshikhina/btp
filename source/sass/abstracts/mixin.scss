@@ -135,6 +135,17 @@
   }
 }
 
+@mixin subscription_input($isPlaceholder: 0) {
+  @include font($fs_14, $lh_18);
+  font-weight: 300;
+  color: var(--text_light);
+
+  @if ($isPlaceholder==1) {
+    @include font($fs_14, $lh_18);
+    color: var(--text_light) !important;
+  }
+}
+
 @mixin footer_title {
   @include font($fs_18, $lh_23);
   margin: 0;

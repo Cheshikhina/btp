@@ -1,0 +1,30 @@
+.activities {
+  margin-bottom: 68px;
+}
+
+.activities__title {
+  @include title;
+  margin-bottom: 42px;
+}
+
+.activities__inner {
+  @include flex_center;
+  flex-wrap: wrap;
+  width: calc(100% + 30px);
+  margin: 0 -15px;
+}
+
+.activities__slider {
+  overflow: hidden;
+}
+
+@media (max-width: $mobile_max) {
+  .activities {
+    margin-bottom: 20px;
+  }
+
+  .activities__title {
+    @include title;
+    margin-bottom: 15px;
+  }
+}

@@ -19766,7 +19766,7 @@ if (document.querySelector('.reviews_slider')) {
   });
 }
 
-let tabsSlider;
+let tabsSlider; // let activitiesSlider;
 
 function sliderInit() {
   tabsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.about_hotel__tabs', {
@@ -19775,7 +19775,14 @@ function sliderInit() {
     pagination: {
       clickable: true
     }
-  });
+  }); // activitiesSlider = new Swiper('.activities__slider', {
+  //   slidesPerView: 1,
+  //   spaceBetween: 20,
+  //   loop: true,
+  //   pagination: {
+  //     clickable: true,
+  //   }
+  // });
 }
 
 if (window.matchMedia(TABLET_MEDIA).matches) {
@@ -19785,7 +19792,7 @@ if (window.matchMedia(TABLET_MEDIA).matches) {
 const resizeHandlerSlider = function resizeHandlerSlider() {
   if (!window.matchMedia(TABLET_MEDIA).matches) {
     if (tabsSlider) {
-      tabsSlider.destroy();
+      tabsSlider.destroy(); // activitiesSlider.destroy();
     }
   } else {
     sliderInit();

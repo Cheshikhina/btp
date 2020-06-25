@@ -41,6 +41,7 @@ if (document.querySelector('.reviews_slider')) {
 }
 
 let tabsSlider;
+// let activitiesSlider;
 
 function sliderInit() {
   tabsSlider = new Swiper('.about_hotel__tabs', {
@@ -50,6 +51,15 @@ function sliderInit() {
       clickable: true,
     }
   });
+
+  // activitiesSlider = new Swiper('.activities__slider', {
+  //   slidesPerView: 1,
+  //   spaceBetween: 20,
+  //   loop: true,
+  //   pagination: {
+  //     clickable: true,
+  //   }
+  // });
 }
 
 if (window.matchMedia(TABLET_MEDIA).matches) {
@@ -60,6 +70,7 @@ const resizeHandlerSlider = function () {
   if (!window.matchMedia(TABLET_MEDIA).matches) {
     if (tabsSlider) {
       tabsSlider.destroy();
+      // activitiesSlider.destroy();
     }
   } else {
     sliderInit();

@@ -665,6 +665,69 @@
             <div class="reviews_slider__btn reviews_slider__btn--prev"></div>
           </div>
         </section>
+        <section class="subscription">
+          <div class="subscription__inner">
+            <h2 class="subscription__title">subscribe to&nbsp;our <span>Newsletter</span></h2>
+            <div class="subscription__form">
+              <form method="post" action="#">
+                <label for="subscription_form" class="visually_hidden">Your email address</label>
+                <input type="email" name="email" id="subscription_form" placeholder="Your email address" required="">
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="activities container">
+          <h2 class="activities__title">Other Activities</h2>
+          <div class="activities__inner">
+            <!-- <div class="activities__slider"> -->
+              <!-- <div class="swiper-wrapper"> -->
+                <div class="swiper-slide activity">
+                  <div class="activity_img image">
+                    <picture>
+                      <source type="image/webp" srcset="./img/activities_1@1x.webp 1x, ./img/activities_1@2x.webp 2x">
+
+                      <img src="./img/activities_1@1x.jpg" srcset="./img/activities_1@2x.jpg 2x" alt="best restaurant" width="255" height="255" loading="lazy">
+                    </picture>
+                  </div>
+                  <h3 class="activity__title">The curious corner of&nbsp;chamarel</h3>
+                  <a href="#" class="activity__btn button">Book Now</a>
+                </div>
+                <div class="swiper-slide activity">
+                  <div class="activity_img image">
+                    <picture>
+                      <source type="image/webp" srcset="./img/activities_2@1x.webp 1x, ./img/activities_2@2x.webp 2x">
+
+                      <img src="./img/activities_2@1x.jpg" srcset="./img/activities_2@2x.jpg 2x" alt="golf game" width="255" height="255" loading="lazy">
+                    </picture>
+                  </div>
+                  <h3 class="activity__title">Gymkhana club golf course</h3>
+                  <a href="#" class="activity__btn button">Book Now</a>
+                </div>
+                <div class="swiper-slide activity">
+                  <div class="activity_img image">
+                    <picture>
+                      <source type="image/webp" srcset="./img/activities_3@1x.webp 1x, ./img/activities_3@2x.webp 2x">
+
+                      <img src="./img/activities_3@1x.jpg" srcset="./img/activities_3@2x.jpg 2x" alt="stunning waterfall" width="255" height="255" loading="lazy">
+                    </picture>
+                  </div>
+                  <h3 class="activity__title">Tamarind falls hiking trip&nbsp;&mdash; full day</h3>
+                  <a href="#" class="activity__btn button">Book Now</a>
+                </div>
+                <div class="swiper-slide activity">
+                  <div class="activity_img image">
+                    <picture>
+                      <source type="image/webp" srcset="./img/activities_4@1x.webp 1x, ./img/activities_4@2x.webp 2x">
+
+                      <img src="./img/activities_4@1x.jpg" srcset="./img/activities_4@2x.jpg 2x" alt="bay view" width="255" height="255" loading="lazy">
+                    </picture>
+                  </div>
+                  <h3 class="activity__title">The blue marine discovery quest</h3>
+                  <a href="#" class="activity__btn button">Book Now</a>
+                </div>
+              </div>
+        </section>
       </main>
     </div>
 
@@ -748,9 +811,9 @@
             <h3 class="footer_form__title">Send us a message</h3>
             <form action="#" method="post">
               <label for="form_name"><span>Your Full Name</span><span>*</span></label>
-              <input id="form_name" type="text" required="" placeholder="Your Full Name*">
+              <input id="form_name" type="text" required="" placeholder="Your Full Name*" required="">
               <label for="form_phone"><span>Phone Number</span><span>*</span></label>
-              <input id="form_phone" type="text" placeholder="Phone Number*">
+              <input id="form_phone" type="text" placeholder="Phone Number*" required="">
               <label for="form_message">Message</label>
               <textarea id="form_message" placeholder="Message"></textarea>
               <button type="submit">Send</button>
