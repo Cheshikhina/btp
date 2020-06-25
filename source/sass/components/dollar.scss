@@ -1,0 +1,11 @@
+.dollar {
+  position: relative;
+  display: block;
+
+  &::before {
+    @include before;
+    content: "$";
+    left: 0;
+    top: 0;
+  }
+}

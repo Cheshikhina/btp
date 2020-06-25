@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 
-var TABLET_MEDIA = '(max-width: 1024px)';
+const TABLET_MEDIA = '(max-width: 1024px)';
 
 if (document.querySelector('.main_slider')) {
   const mainSlider = new Swiper('.main_slider', {

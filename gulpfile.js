@@ -130,7 +130,8 @@ function css() {
     .pipe(postcss([autoprefixer({
       browsers: [
         "> 1%",
-        "not dead"
+        "not dead",
+        "not ie 11"
       ]
     })]))
     .pipe(csso())

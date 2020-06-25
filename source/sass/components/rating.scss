@@ -1,0 +1,29 @@
+.rating {
+  @include flex_center;
+
+  span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-image: url("../img/star.svg");
+    background-repeat: no-repeat;
+
+    &+span {
+      margin-left: 2px;
+    }
+  }
+}
+
+@media (max-width: $mobile_max) {
+  .rating {
+    span {
+      height: 15px;
+      width: 15px;
+      background-size: contain;
+
+      &+span {
+        margin-left: 5px;
+      }
+    }
+  }
+}

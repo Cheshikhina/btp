@@ -146,3 +146,26 @@
     text-align: center;
   }
 }
+
+@mixin title {
+  @include font($fs_24, $lh_30);
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @media (max-width: $mobile_max) {
+    text-align: center;
+  }
+}
+
+@mixin title_big {
+  @include font($fs_36, $lh_45);
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (max-width: $mobile_max) {
+    @include font($fs_24, $lh_30);
+  }
+}

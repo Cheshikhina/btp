@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  // font-size: $main_font*1px;
+  font-size: $main_font*1px;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
   word-wrap: normal;
   color: var(--text_dark);
   background-color: var(--bg_light);
+  // overflow-x: hidden;
 }
 
 main {

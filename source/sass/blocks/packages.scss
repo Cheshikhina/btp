@@ -1,0 +1,24 @@
+.packages {
+  margin-bottom: 80px;
+}
+
+.packages__title {
+  @include title_big;
+  margin-bottom: 65px;
+}
+
+.packages__inner {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: calc(100% + 30px);
+  margin: 0 -15px;
+}
+
+@media (max-width: $mobile_max) {
+
+  .packages,
+  .packages__title {
+    margin-bottom: 30px;
+  }
+}

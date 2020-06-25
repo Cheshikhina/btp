@@ -20,17 +20,8 @@
 
 .options__price_number {
   @include font($fs_24, $lh_33);
-  position: relative;
-  display: block;
   font-weight: 800;
   padding-left: 21px;
-
-  &::before {
-    @include before;
-    content: "$";
-    left: 0;
-    top: 0;
-  }
 }
 
 .options__price_text {
@@ -79,8 +70,6 @@
   margin: 9px 0 17px;
   font-weight: 600;
 }
-
-// .options__booking_text {}
 
 .options__booking_link {
   @include flex_center;

@@ -50,6 +50,10 @@
     height: 0;
     padding-bottom: 71%;
   }
+
+  .main_slider__btn {
+    display: none;
+  }
 }
 
 @media (min-width: $no_mobile) {

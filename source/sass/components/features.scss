@@ -53,7 +53,7 @@
 }
 
 .features__list--small {
-  max-width: calc(50% - 15px);
+  width: 47%;
 }
 
 .features__inner_line {
@@ -95,9 +95,10 @@
 
 .features__calendar {
   @include font($fs_14, $lh_18);
+  width: 51.4%;
   position: relative;
   margin: 0;
-  padding-left: 39px;
+  padding-left: 37px;
 
   &::before {
     @include before;
@@ -130,5 +131,57 @@ html.dark {
 
   &>*:not(.features__remark):not(.features__title) {
     width: calc(100% / 3);
+  }
+}
+
+@media (max-width: $tablet_max) {
+  .features--inner {
+    padding-bottom: 4px;
+  }
+
+  .features__list--small,
+  .features__calendar {
+    width: 100%;
+  }
+
+  .features__inner_line+.features__inner_line {
+    margin-top: 34px;
+  }
+
+  .features__inner {
+    width: calc(100% / 2);
+    margin-bottom: 20px;
+  }
+
+  .features--two_calendar {
+    &>*:not(.features__remark):not(.features__title) {
+      width: calc(100% / 2);
+    }
+  }
+}
+
+@media (max-width: $mobile_max) {
+
+  .features__title,
+  .features__subtitle {
+    text-align: center;
+  }
+
+  .features__inner {
+    width: 100%;
+  }
+
+  .features--two_calendar {
+    &>*:not(.features__remark):not(.features__title) {
+      width: 100%;
+    }
+  }
+
+  .features__inner_line+.features__inner_line {
+    margin-top: 0;
+
+    &::before {
+      display: none;
+    }
   }
 }

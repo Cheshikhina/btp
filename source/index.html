@@ -112,7 +112,7 @@
         <section class="main container">
           <div class="main__head">
             <div class="main__box">
-              <div class="main__rating_hotel" data-rating="5"></div>
+              <div class="main__rating_hotel rating" data-rating="5"></div>
               <h1 class="main__title">GRAND HILTON HOTEL</h1><span class="main__mark mark mark--main">Flash Offer</span>
               <p class="main__text">Half-Board/ All Inclusive + Complimentary Activities + Child Stays Free</p>
             </div>
@@ -152,7 +152,7 @@
               </div>
             </div>
             <div class="main__options options">
-              <p class="options__price">price starts&nbsp;as <span class="options__price_number">8,500</span> <span class="options__price_text">per room&nbsp;/ night</span></p>
+              <p class="options__price">price starts&nbsp;as <span class="options__price_number dollar">8,500</span> <span class="options__price_text">per room&nbsp;/ night</span></p>
               <div class="options__box">
                 <p class="options__hotel options__hotel--guest"><span>2</span> x Guests</p>
                 <p class="options__hotel options__hotel--room"><span>1</span> x Room</p>
@@ -166,7 +166,7 @@
                   </svg>
                 </a>
               </p>
-              <a href="#packages" class="options__btn button" data-anchor>View Other Options</a>
+              <a href="#packages_page" class="options__btn button" data-anchor>View Other Options</a>
             </div>
             <div class="main__map" id="page_map"></div>
           </div>
@@ -186,7 +186,7 @@
             </div>
           </div>
           <div class="about_hotel__contents">
-            <div class="about_hotel__content" data-content="about_hotel">
+            <div class="about_hotel__content about_hotel__content--active" data-content="about_hotel">
               <h2 class="about_hotel__content_title">Package Summery</h2>
               <div class="features about_hotel__box about_hotel__box--half">
                 <h3 class="features__title">Package Highlights</h3>
@@ -208,7 +208,7 @@
                 <p class="features__calendar">10th March&nbsp;- 30th April 2020</p>
                 <span class="features__remark">* Valid until 30&nbsp;April 2020</span>
               </div>
-              <div class="features about_hotel__box">
+              <div class="features about_hotel__box features--inner">
                 <h3 class="features__title">Package Summery Details</h3>
                 <div class="features__inner_line">
                   <div class="features__inner">
@@ -270,8 +270,9 @@
                 </div>
               </div>
             </div>
-            <div class="about_hotel__content" data-content="about_hotel">
-              <div class="features about_hotel__box">
+            <div class="about_hotel__content about_hotel__content--active" data-content="about_hotel">
+              <h2 class="about_hotel__content_title">Hotel Information</h2>
+              <div class="features about_hotel__box features--inner">
                 <h3 class="features__title">Package Summery Details</h3>
                 <div class="features__inner_line">
                   <div class="features__inner">
@@ -346,7 +347,8 @@
                 </div>
               </div>
             </div>
-            <div class="about_hotel__content" data-content="about_hotel">
+            <div class="about_hotel__content about_hotel__content--active" data-content="about_hotel">
+              <h2 class="about_hotel__content_title">Rooms</h2>
               <div class="features about_hotel__box about_hotel__box--two_el">
                 <h3 class="features__title">Package Highlights</h3>
                 <ul class="features__list">
@@ -368,8 +370,9 @@
                 <span class="features__remark">* Valid until 30&nbsp;April 2020</span>
               </div>
             </div>
-            <div class="about_hotel__content" data-content="about_hotel">
-              <div class="features about_hotel__box">
+            <div class="about_hotel__content about_hotel__content--active" data-content="about_hotel">
+              <h2 class="about_hotel__content_title">Facilities &amp;&nbsp;Activities</h2>
+              <div class="features about_hotel__box features--inner">
                 <h3 class="features__title">Package Summery Details</h3>
                 <div class="features__inner_line">
                   <div class="features__inner">
@@ -389,7 +392,8 @@
                 </div>
               </div>
             </div>
-            <div class="about_hotel__content" data-content="about_hotel">
+            <div class="about_hotel__content about_hotel__content--active" data-content="about_hotel">
+              <h2 class="about_hotel__content_title">Dining &amp;&nbsp;Entertainment</h2>
               <div class="features about_hotel__box about_hotel__box--half">
                 <h3 class="features__title">Offer Details</h3>
                 <ul class="features__list features__list--small">
@@ -399,8 +403,9 @@
                 <span class="features__remark">* Valid until 30&nbsp;April 2020</span>
               </div>
             </div>
-            <div class="about_hotel__content" data-content="about_hotel">
-              <div class="features about_hotel__box">
+            <div class="about_hotel__content about_hotel__content--active" data-content="about_hotel">
+              <h2 class="about_hotel__content_title">Reviews</h2>
+              <div class="features about_hotel__box features--inner">
                 <h3 class="features__title">Package Summery Details</h3>
                 <div class="features__inner_line">
                   <div class="features__inner">
@@ -462,7 +467,8 @@
                 </div>
               </div>
             </div>
-            <div class="about_hotel__content" data-content="about_hotel">
+            <div class="about_hotel__content about_hotel__content--active" data-content="about_hotel">
+              <h2 class="about_hotel__content_title">Questions &amp;&nbsp;Answers</h2>
               <div class="features about_hotel__box about_hotel__box--half">
                 <h3 class="features__title">Package Highlights</h3>
                 <ul class="features__list">
@@ -482,6 +488,121 @@
                 </ul>
                 <p class="features__calendar">10th March&nbsp;- 30th April 2020</p>
                 <span class="features__remark">* Valid until 30&nbsp;April 2020</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="packages container" id="packages_page">
+          <h2 class="packages__title">Other Packages</h2>
+          <div class="packages__inner">
+            <div class="package package--big">
+              <div class="package__images image">
+                <span class="package__mark mark">Flash Offer</span>
+                <picture>
+                  <source type="image/webp" srcset="./img/packages1@1x.webp 1x, ./img/packages1@2x.webp 2x">
+
+                  <img src="./img/packages1@1x.jpg" srcset="./img/packages1@2x.jpg 2x" alt="View of the Blue Haven Hotel" width="366" height="500" loading="lazy">
+                </picture>
+              </div>
+              <div class="package__info">
+                <div class="package__rating rating" data-rating="5"></div>
+                <h3 class="package__title">Hotel Blue Haven</h3>
+                <p class="package__text">Aute quis duis excepteur excepteur ipsum cat eiusmod consectetur enim laborum magna llit. Ipsum est fugiat velit ea&nbsp;llamco do&nbsp;esse ut&nbsp;in&nbsp;veniam sun in&nbsp;onsequat. Aute quis duis epteur excepteur ipsum occaecat eiusmod nsectetur enim laborum magna mollit. Ipsum est fugiat velit ea&nbsp;ullamco&nbsp;do</p>
+                <p class="package__text_icon package__text_icon--geo">1749 Wheeler Ridge Delaware</p>
+                <p class="package__text_icon package__text_icon--guest"><span>2</span> x Guests</p>
+                <p class="package__text_icon package__text_icon--room"><span>1</span> x Room</p>
+                <div class="package__box">
+                  <p class="package__price dollar" aria-label="Sale price"><span>8,500</span><span class="package__price_last dollar" aria-label="Price before sale">10,500</span></p>
+                  <a href="#" class="package__btn button">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="package">
+              <div class="package__images image">
+                <span class="package__mark mark">Flash Offer</span>
+                <picture>
+                  <source type="image/webp" srcset="./img/packages2s@1x.webp 1x, ./img/packages2s@2x.webp 2x">
+
+                  <img src="./img/packages2s@1x.jpg" srcset="./img/packages2s@2x.jpg 2x" alt="View of the LUX* Belle Mare" width="350" height="250" loading="lazy">
+                </picture>
+              </div>
+              <div class="package__info">
+                <div class="package__rating rating" data-rating="4"></div>
+                <h3 class="package__title">LUX* Belle Mare</h3>
+                <p class="package__text">Aute quis duis excepteur excepteur ipsum cat eiusmod consectetur enim laborum magna llit. Ipsum est fugiat velit ea&nbsp;llamco do&nbsp;esse ut&nbsp;in&nbsp;veniam sun in&nbsp;onsequat. Aute quis duis epteur excepteur ipsum occaecat eiusmod nsectetur enim laborum magna mollit. Ipsum est fugiat velit ea&nbsp;ullamco&nbsp;do</p>
+                <p class="package__text_icon package__text_icon--geo">1749 Wheeler Ridge Delaware</p>
+                <p class="package__text_icon package__text_icon--guest"><span>2</span> x Guests</p>
+                <p class="package__text_icon package__text_icon--room"><span>1</span> x Room</p>
+                <div class="package__box">
+                  <p class="package__price dollar" aria-label="Sale price"><span>3,000</span><span class="package__price_last dollar" aria-label="Price before sale">8,500</span></p>
+                  <a href="#" class="package__btn button">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="package">
+              <div class="package__images image">
+                <span class="package__mark mark">Flash Offer</span>
+                <picture>
+                  <source type="image/webp" srcset="./img/packages3s@1x.webp 1x, ./img/packages3s@2x.webp 2x">
+
+                  <img src="./img/packages3s@1x.jpg" srcset="./img/packages3s@2x.jpg 2x" alt="View of the White Palace" width="350" height="250" loading="lazy">
+                </picture>
+              </div>
+              <div class="package__info">
+                <div class="package__rating rating" data-rating="3"></div>
+                <h3 class="package__title">White Palace</h3>
+                <p class="package__text">Aute quis duis excepteur excepteur ipsum cat eiusmod consectetur enim laborum magna llit. Ipsum est fugiat velit ea&nbsp;llamco do&nbsp;esse ut&nbsp;in&nbsp;veniam sun in&nbsp;onsequat. Aute quis duis epteur excepteur ipsum occaecat eiusmod nsectetur enim laborum magna mollit. Ipsum est fugiat velit ea&nbsp;ullamco&nbsp;do</p>
+                <p class="package__text_icon package__text_icon--geo">1749 Wheeler Ridge Delaware</p>
+                <p class="package__text_icon package__text_icon--guest"><span>2</span> x Guests</p>
+                <p class="package__text_icon package__text_icon--room"><span>1</span> x Room</p>
+                <div class="package__box">
+                  <p class="package__price dollar" aria-label="Sale price"><span>9,500</span><span class="package__price_last dollar" aria-label="Price before sale">10,500</span></p>
+                  <a href="#" class="package__btn button">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="package">
+              <div class="package__images image">
+                <span class="package__mark mark">Flash Offer</span>
+                <picture>
+                  <source type="image/webp" srcset="./img/packages4s@1x.webp 1x, ./img/packages4s@2x.webp 2x">
+
+                  <img src="./img/packages4s@1x.jpg" srcset="./img/packages4s@2x.jpg 2x" alt="View of the Luxury Place" width="350" height="250" loading="lazy">
+                </picture>
+              </div>
+              <div class="package__info">
+                <div class="package__rating rating" data-rating="2"></div>
+                <h3 class="package__title">Luxury Place</h3>
+                <p class="package__text">Aute quis duis excepteur excepteur ipsum cat eiusmod consectetur enim laborum magna llit. Ipsum est fugiat velit ea&nbsp;llamco do&nbsp;esse ut&nbsp;in&nbsp;veniam sun in&nbsp;onsequat. Aute quis duis epteur excepteur ipsum occaecat eiusmod nsectetur enim laborum magna mollit. Ipsum est fugiat velit ea&nbsp;ullamco&nbsp;do</p>
+                <p class="package__text_icon package__text_icon--geo">1749 Wheeler Ridge Delaware</p>
+                <p class="package__text_icon package__text_icon--guest"><span>2</span> x Guests</p>
+                <p class="package__text_icon package__text_icon--room"><span>1</span> x Room</p>
+                <div class="package__box">
+                  <p class="package__price dollar" aria-label="Sale price"><span>2,500</span><span class="package__price_last dollar" aria-label="Price before sale">4,500</span></p>
+                  <a href="#" class="package__btn button">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="package">
+              <div class="package__images image">
+                <span class="package__mark mark">Flash Offer</span>
+                <picture>
+                  <source type="image/webp" srcset="./img/packages5s@1x.webp 1x, ./img/packages5s@2x.webp 2x">
+
+                  <img src="./img/packages5s@1x.jpg" srcset="./img/packages5s@2x.jpg 2x" alt="View of the Hotel Five Star" width="350" height="250" loading="lazy">
+                </picture>
+              </div>
+              <div class="package__info">
+                <div class="package__rating rating" data-rating="1"></div>
+                <h3 class="package__title">Hotel Five Star</h3>
+                <p class="package__text">Aute quis duis excepteur excepteur ipsum cat eiusmod consectetur enim laborum magna llit. Ipsum est fugiat velit ea&nbsp;llamco do&nbsp;esse ut&nbsp;in&nbsp;veniam sun in&nbsp;onsequat. Aute quis duis epteur excepteur ipsum occaecat eiusmod nsectetur enim laborum magna mollit. Ipsum est fugiat velit ea&nbsp;ullamco&nbsp;do</p>
+                <p class="package__text_icon package__text_icon--geo">1749 Wheeler Ridge Delaware</p>
+                <p class="package__text_icon package__text_icon--guest"><span>2</span> x Guests</p>
+                <p class="package__text_icon package__text_icon--room"><span>1</span> x Room</p>
+                <div class="package__box">
+                  <p class="package__price dollar" aria-label="Sale price"><span>3,500</span><span class="package__price_last dollar" aria-label="Price before sale">6,500</span></p>
+                  <a href="#" class="package__btn button">Book Now</a>
+                </div>
               </div>
             </div>
           </div>

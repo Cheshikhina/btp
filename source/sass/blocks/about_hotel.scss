@@ -1,5 +1,5 @@
 .about_hotel {
-  margin-bottom: 172px;
+  margin-bottom: 72px;
 }
 
 .about_hotel__links {
@@ -31,14 +31,14 @@
     left: 0;
     background-color: transparent;
   }
+}
 
-  &--active {
-    color: var(--accent_main);
-    pointer-events: none;
+.about_hotel__tab--active {
+  color: var(--accent_main);
+  pointer-events: none;
 
-    &::before {
-      background-color: currentColor;
-    }
+  &::before {
+    background-color: currentColor;
   }
 }
 
@@ -50,10 +50,9 @@
 }
 
 .about_hotel__content_title {
-  @include font($fs_24, $lh_30);
-  margin: 0;
-  font-weight: 700;
-  text-transform: uppercase;
+  @include title;
+  width: 100%;
+  margin-bottom: 29px;
 }
 
 .about_hotel__content {
@@ -75,15 +74,6 @@
   opacity: 1;
 }
 
-.about_hotel__content_title {
-  @include font($fs_24, $lh_30);
-  width: 100%;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
-  margin-bottom: 29px;
-}
-
 .about_hotel__box {
   width: 100%;
   border-radius: $br_08;
@@ -101,5 +91,23 @@
 
   ul {
     width: calc(100% / 3);
+  }
+}
+
+@media (max-width: $tablet_max) {
+  .about_hotel__box--two_el ul {
+    width: calc(100% / 2);
+  }
+}
+
+@media (max-width: $mobile_max) {
+  .about_hotel {
+    margin-bottom: 10px;
+  }
+
+  .about_hotel__box--two_el ul,
+  .about_hotel__box--half,
+  .about_hotel__box--half ul {
+    width: 100%;
   }
 }

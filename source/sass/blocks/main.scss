@@ -10,27 +10,14 @@
 }
 
 .main__rating_hotel {
-  display: flex;
   margin-bottom: 4px;
-
-  span {
-    display: block;
-    width: 6px;
-    height: 6px;
-    margin-left: 2px;
-    background-image: url("../img/star.svg");
-    background-repeat: no-repeat;
-  }
 }
 
 .main__title {
-  @include font($fs_24, $lh_30);
+  @include title;
   display: inline;
   vertical-align: middle;
-  margin: 0;
   padding-right: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
 }
 
 .main__mark {
@@ -117,18 +104,10 @@
 
   .main__rating_hotel {
     margin-bottom: 30px;
-
-    span {
-      height: 15px;
-      width: 15px;
-      margin-left: 5px;
-      background-size: contain;
-    }
   }
 
   .main__title {
     display: inline-block;
-    text-align: center;
     margin-bottom: 10px;
   }
 
