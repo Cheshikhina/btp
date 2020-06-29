@@ -5,20 +5,6 @@ $tablet_max: 1024px;
 $desktop_max: 1440px;
 $no_mobile: 768px;
 
-// color scheme
-// $white: #ffffff;
-// $black: #000000;
-// $accent_main: #EC1F46;
-// $accent_1: #F2994A;
-// $text_black: #000000;
-// $text_dark: #333333;
-// $text_light: #BDBDBD;
-// $text_lightest: #E0E0E0;
-// $text_white: #ffffff;
-// $bg_dark:#0A223D;
-// $bg_light:#F5FAFE;
-// $bg_white:#ffffff;
-// $btn_slider_reviews:#828282;
 
 // dark theme
 :root,
@@ -55,8 +41,6 @@ html {
 }
 
 html.dark {
-  // --accent_main: #EDE437;
-  // --accent_main: #F0EA7F;
   --accent_main: #F2B1BD;
   --text_black: #E5E5E5;
   --text_dark: #CCCCCC;
@@ -75,36 +59,6 @@ html.dark {
   --tick: #B3828B;
   --error_message: #E6A8B3;
 }
-
-// @media screen and (prefers-color-scheme: light) {
-//   --accent_main: #EC1F46;
-//   --text_black: #000000;
-//   --text_dark: #333333;
-//   --text_light: #BDBDBD;
-//   --text_white: #ffffff;
-//   --bg_dark: #0A223D;
-//   --bg_light: #F5FAFE;
-//   --bg_white: #ffffff;
-//   --btn_text_white: #ffffff;
-//   --btn_slider_reviews: #828282;
-//   --btn_hover: #F0EA7F;
-// }
-
-// @media screen and (prefers-color-scheme: light) {
-//   // --accent_main: #EDE437;
-//   --accent_main: #F0EA7F;
-//   // --accent_main: #A10521;
-//   --text_black: #E5E5E5;
-//   --text_dark: #CCCCCC;
-//   --text_light: #F1F2FA;
-//   --text_white: #8FA5BD;
-//   --bg_dark: #3F628A;
-//   --bg_light: #345070;
-//   --bg_white: #22354A;
-//   --btn_text_white: #22354A;
-//   --btn_slider_reviews: #A6A6A6;
-//   --btn_hover: #EC1F46;
-// }
 
 
 // fonts size
