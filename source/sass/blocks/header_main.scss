@@ -50,6 +50,10 @@
 @media (max-width: $mobile_max) {
   .header_main__inner {
     flex-wrap: wrap;
+
+    &>* {
+      margin: 0;
+    }
   }
 
   .header_main__logo {

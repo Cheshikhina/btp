@@ -64,6 +64,7 @@
 @media (max-width: $mobile_max) {
   .search {
     max-width: 65px;
+    margin-left: 0;
 
     form {
       width: 65px;
