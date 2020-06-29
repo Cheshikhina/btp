@@ -14,9 +14,9 @@ if (document.querySelector('.main_slider')) {
       nextEl: '.main_slider__btn--next',
       prevEl: '.main_slider__btn--prev',
     },
-    // autoplay: {
-    //   delay: 7000,
-    // },
+    autoplay: {
+      delay: 7000,
+    },
   });
 }
 
