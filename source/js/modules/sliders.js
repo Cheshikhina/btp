@@ -15,7 +15,7 @@ if (document.querySelector('.main_slider')) {
       prevEl: '.main_slider__btn--prev',
     },
     autoplay: {
-      delay: 7000,
+      delay: 5000,
     },
   });
 }

@@ -33,6 +33,7 @@
 }
 
 .header__color_toggle:checked+label {
+  position: relative;
   justify-content: center;
   width: 12px;
   height: 12px;
@@ -44,8 +45,9 @@
     position: absolute;
     width: 2px;
     height: 6px;
-    margin: auto;
-    margin-top: -11.5px;
+    margin: 0 auto;
+    top: calc(50% - 11.5px);
+    transform: translateY(-50%);
     border-radius: 2px;
     background-color: var(--sun);
     box-shadow: 0 22.5px var(--sun);

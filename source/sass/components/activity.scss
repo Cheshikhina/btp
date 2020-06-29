@@ -27,8 +27,8 @@
 
 .activity__btn {
   @include font($fs_12, $lh_16);
-  width: max-content;
-  max-width: 200px;
+  width: 100%;
+  max-width: 100px;
   padding: 7px 21px;
   margin: 0 26px 24px;
   font-weight: 600;

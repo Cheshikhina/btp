@@ -12,6 +12,11 @@
   &>div {
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
+
+    &>a {
+      width: auto;
+    }
   }
 }
 
@@ -97,6 +102,12 @@
 @media (max-width: $tablet_max) {
   .about_hotel__box--two_el ul {
     width: calc(100% / 2);
+  }
+
+  .about_hotel__tabs {
+    &>div {
+      box-sizing: content-box;
+    }
   }
 }
 
