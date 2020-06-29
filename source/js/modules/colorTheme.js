@@ -28,7 +28,7 @@ const colorTheme = () => {
       '--btn_slider_reviews': '#A6A6A6',
       '--btn_hover': '#B3828B',
       '--logo_header': '#F1F2FA',
-      '--logo_footer': 'AD1732',
+      '--logo_footer': '#AD1732',
       '--tick': '#B3828B',
       '--error_message': '#E6A8B3',
     };
@@ -66,7 +66,7 @@ const colorTheme = () => {
       '--btn_slider_reviews': '#828282',
       '--btn_hover': '#AD1732',
       '--logo_header': '#0A223D',
-      '--logo_footer': 'EC1F46',
+      '--logo_footer': '#EC1F46',
       '--tick': '#333333',
       '--error_message': '#FF4D4D',
     };
