@@ -25,6 +25,7 @@
 
 .header_pre__link {
   @include flex_center;
+  padding: 0 3px;
 
   svg {
     order: -1;
@@ -32,7 +33,7 @@
   }
 
   &+.header_pre__link {
-    margin-left: calc(6.8% - 10px);
+    margin-left: calc(9.2% - 10px);
   }
 
   &:active {
@@ -42,6 +43,10 @@
 
 .header_pre__link--gift {
   margin-left: auto;
+
+  svg {
+    animation: gift 8s linear infinite forwards;
+  }
 }
 
 @media (max-width: $mobile_max) {
@@ -59,15 +64,11 @@
 
   .header_pre__link {
     span {
-      display: none;
+      @include visually_hidden;
     }
 
     svg {
       margin-right: 0;
     }
   }
-
 }
-
-// @media (min-width: $no_mobile) {
-// }

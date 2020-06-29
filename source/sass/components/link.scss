@@ -16,5 +16,9 @@
   .link:hover,
   .link:focus {
     color: var(--accent_main);
+
+    svg {
+      animation-play-state: paused;
+    }
   }
 }

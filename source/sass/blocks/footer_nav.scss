@@ -7,6 +7,7 @@
 .footer_nav__logo {
   margin-right: 30px;
   color: var(--text_white);
+  margin-top: 35px;
 
   svg {
     width: 100%;
@@ -46,7 +47,7 @@
   padding: 0;
 
   &+.footer_nav__link {
-    margin-top: 10px;
+    margin-top: 4px;
   }
 }
 

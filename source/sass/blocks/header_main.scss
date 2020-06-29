@@ -16,6 +16,8 @@
   height: 34px;
   color: var(--text_black);
   transition: color $duration_03, opacity $duration_03;
+  margin-left: auto;
+  margin-right: 4.8%;
 
   &:active {
     opacity: $opacity;
@@ -51,9 +53,10 @@
   }
 
   .header_main__logo {
-      width: calc(100% - 95px);
-      text-align: left;
-    svg{
+    width: calc(100% - 95px);
+    text-align: left;
+
+    svg {
       max-width: 100%;
     }
   }

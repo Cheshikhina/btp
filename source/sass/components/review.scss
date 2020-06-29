@@ -65,8 +65,8 @@
 
 .review__date {
   @include font($fs_10, $lh_13);
-  margin-bottom: 5px;
   margin: 0;
+  margin-bottom: 9px;
   color: var(--text_black);
 }
 
@@ -85,9 +85,11 @@
 
     &::before,
     &::after {
-      display: none;}}
+      display: none;
+    }
+  }
 
-      .review__date {
-        margin-bottom: 10px;
-      }
+  .review__date {
+    margin-bottom: 10px;
+  }
 }

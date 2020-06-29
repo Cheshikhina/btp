@@ -1,6 +1,5 @@
 import Swiper from 'swiper';
-
-const TABLET_MEDIA = '(max-width: 1024px)';
+import common from './common';
 
 if (document.querySelector('.main_slider')) {
   const mainSlider = new Swiper('.main_slider', {
@@ -40,10 +39,12 @@ if (document.querySelector('.reviews_slider')) {
   });
 }
 
+const breakpointTablet = window.matchMedia(common.TABLET_MEDIA);
+const breakpointMobile = window.matchMedia(common.MOBILE_MEDIA);
 let tabsSlider;
-// let activitiesSlider;
+let activitiesSlider;
 
-function sliderInit() {
+function tabsSliderInit() {
   tabsSlider = new Swiper('.about_hotel__tabs', {
     slidesPerView: 'auto',
     spaceBetween: 20,
@@ -51,30 +52,42 @@ function sliderInit() {
       clickable: true,
     }
   });
-
-  // activitiesSlider = new Swiper('.activities__slider', {
-  //   slidesPerView: 1,
-  //   spaceBetween: 20,
-  //   loop: true,
-  //   pagination: {
-  //     clickable: true,
-  //   }
-  // });
 }
 
-if (window.matchMedia(TABLET_MEDIA).matches) {
-  sliderInit();
-}
-
-const resizeHandlerSlider = function () {
-  if (!window.matchMedia(TABLET_MEDIA).matches) {
-    if (tabsSlider) {
-      tabsSlider.destroy();
-      // activitiesSlider.destroy();
+function activitiesSliderInit() {
+  activitiesSlider = new Swiper('.activities__slider', {
+    slidesPerView: 1.7,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      clickable: true,
     }
-  } else {
-    sliderInit();
-  }
-};
+  });
+}
 
-window.addEventListener('resize', resizeHandlerSlider);
+function breakpointTabletChecker() {
+  if (breakpointTablet.matches === false) {
+    if (tabsSlider !== undefined) {
+      tabsSlider.destroy(true, true);
+    }
+    return;
+  } else if (breakpointTablet.matches === true) {
+    return tabsSliderInit();
+  }
+}
+
+function breakpointMobileChecker() {
+  if (breakpointMobile.matches === false) {
+    if (activitiesSlider !== undefined) {
+      activitiesSlider.destroy(true, true);
+    }
+    return;
+  } else if (breakpointMobile.matches === true) {
+    return activitiesSliderInit();
+  }
+}
+
+breakpointTablet.addListener(breakpointTabletChecker);
+breakpointMobile.addListener(breakpointMobileChecker);
+breakpointTabletChecker();
+breakpointMobileChecker();

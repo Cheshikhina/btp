@@ -1,6 +1,11 @@
 import IMask from 'imask';
 
-const common = () => {
+const common = {};
+common.DESKTOP_MEDIA = '(min-width: 1025px)';
+common.TABLET_MEDIA = '(max-width: 1024px)';
+common.MOBILE_MEDIA = '(max-width: 767px)';
+
+common.functions = () => {
   const noFocus = () => {
     document.addEventListener('mouseup', function (evt) {
       if (evt.target.tagName !== 'A' && evt.target.tagName !== 'BUTTON') {
@@ -27,6 +32,7 @@ const common = () => {
       });
     }
   };
+
 
   noFocus();
   addClassForLazyload();

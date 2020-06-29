@@ -28,81 +28,37 @@
 }
 
 .subscription__form {
+  width: 100%;
+  max-width: 350px;
+  height: 55px;
   border-radius: $br_04;
   background-color: var(--bg_white);
-  height: 55px;
   overflow: hidden;
 
-  form {
-    @include flex_center;
-    justify-content: space-between;
+  div {
     width: 100%;
     height: 100%;
-  }
-
-  label {
-    @include visually_hidden;
   }
 
   input {
     @include subscription_input;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 12px 23px 13px;
-    background-color: var(--bg_light);
-    border: none;
-    -webkit-appearance: none;
-    border-radius: 0;
-    border-radius: $br_06 0 0 $br_06;
-    outline: 0;
-    resize: none;
-    transition: $transition;
+    border-radius: $br_04 0 0 $br_04;
 
     @each $placeholder in $placeholders_dots {
       &::#{$placeholder} {
         @include subscription_input(1);
-        transition: opacity $duration_03;
       }
     }
 
     @each $placeholder in $placeholders_dot {
-      &:#{$placeholder} {
-        @include search_input(1);
-        transition: opacity $duration_03;
-      }
-    }
-
-    &:focus {
-
-      @each $placeholder in $placeholders_dots {
-        &::#{$placeholder} {
-          opacity: 0;
-        }
-      }
-
-      @each $placeholder in $placeholders_dot {
-        &:#{$placeholder} {
-          opacity: 0;
-        }
+      &::#{$placeholder} {
+        @include subscription_input(1);
       }
     }
   }
 
   [type="submit"] {
-    @include button;
-    @include flex_center(1);
-    position: relative;
-    min-width: 65px;
-    max-width: 65px;
-    height: 100%;
-    color: var(--bg_white);
-    background-color: var(--accent_main);
-    transition: $transition;
-
-    &:active {
-      opacity: $opacity;
-    }
+    border-radius: 0 $br_04 $br_04 0;
   }
 }
 
@@ -125,13 +81,5 @@
   .subscription__form {
     max-width: 620px;
     width: 100%;
-  }
-}
-
-@media (min-width: $no_mobile) {
-
-  .subscription__form [type="submit"]:hover,
-  .subscription__form [type="submit"]:focus {
-    background-color: var(--btn_hover);
   }
 }

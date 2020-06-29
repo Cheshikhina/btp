@@ -3,7 +3,7 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 18px 24px;
+  padding: 18px 25px;
   padding-top: 0;
   background-color: var(--bg_white);
 
@@ -14,7 +14,7 @@
   width: calc(100% + 24px*2);
   min-height: 50px;
   margin: 0 -24px;
-  margin-bottom: 27px;
+  margin-bottom: 28px;
   padding: 16px 24px;
   color: var(--text_white);
   font-weight: 700;
@@ -27,7 +27,10 @@
   li {
     position: relative;
     padding-left: 40px;
-    margin-bottom: 21px;
+
+    &+li {
+      margin-top: 25px;
+    }
 
     &::before {
       @include before;
@@ -53,7 +56,7 @@
 }
 
 .features__list--small {
-  width: 47%;
+  width: 45%;
 }
 
 .features__inner_line {
@@ -77,6 +80,10 @@
       background-size: cover;
     }
   }
+
+  &:last-child {
+    margin-bottom: 42px;
+  }
 }
 
 .features__inner {
@@ -90,12 +97,13 @@
   font-weight: 600;
   color: var(--accent_main);
   margin: 0;
+  margin-top: 12px;
   margin-bottom: 21px;
 }
 
 .features__calendar {
   @include font($fs_14, $lh_18);
-  width: 51.4%;
+  width: 47%;
   position: relative;
   margin: 0;
   padding-left: 37px;
@@ -121,7 +129,7 @@ html.dark {
 .features__remark {
   @include font($fs_10, $lh_13);
   width: 100%;
-  margin-top: 20px;
+  margin-top: 49px;
   padding-left: 40px;
   font-style: italic;
 }

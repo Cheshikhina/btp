@@ -1,7 +1,6 @@
+import common from './common';
+
 const card = (selectorCard, activeCardIndex = 0) => {
-  const DESKTOP_MEDIA = '(min-width: 1025px)';
-  const TABLET_MEDIA = '(max-width: 1024px)';
-  const MOBILE_MEDIA = '(max-width: 767px)';
   const cards = document.querySelectorAll(selectorCard);
 
   function parseImgURL(path) {
@@ -80,21 +79,25 @@ const card = (selectorCard, activeCardIndex = 0) => {
   }
 
   function clickHandlerCards(evt) {
+    if (evt.currentTarget.classList.contains(selectorCard.substr(1) + '--big') || evt.target.hasAttribute('data-modal')) {
+      return;
+    }
+
     putInOrder();
     if (evt.target) {
       let index = evt.target.style.order;
       evt.target.classList.add(selectorCard.substr(1) + '--big');
       createPicture(evt.target);
-      if (!window.matchMedia(MOBILE_MEDIA).matches && window.matchMedia(TABLET_MEDIA).matches && (index % 2 === 0)) {
+      if (!window.matchMedia(common.MOBILE_MEDIA).matches && window.matchMedia(common.TABLET_MEDIA).matches && (index % 2 === 0)) {
         cards[index - 1].style.order = +index + 1;
         cards[index].style.order = index - 1;
-      } else if (window.matchMedia(DESKTOP_MEDIA).matches && (index % 3 === 0)) {
+      } else if (window.matchMedia(common.DESKTOP_MEDIA).matches && (index % 3 === 0)) {
         cards[index - 1].style.order = +index + 1;
         cards[index].style.order = index - 1;
       }
       evt.target.scrollIntoView({
         behavior: 'smooth',
-        block: 'start',
+        block: 'center',
       });
     }
   }
@@ -102,11 +105,11 @@ const card = (selectorCard, activeCardIndex = 0) => {
   putInOrder(true);
 
   cards.forEach(item => {
-    item.addEventListener('click', clickHandlerCards);
+    item.addEventListener('mousedown', clickHandlerCards);
   });
 
   window.addEventListener('resize', function () {
-    if (!window.matchMedia(MOBILE_MEDIA).matches) {
+    if (!window.matchMedia(common.MOBILE_MEDIA).matches) {
       putInOrder(true);
     }
   });

@@ -1,0 +1,29 @@
+.price {
+  @include font($fs_24, $lh_30);
+  position: relative;
+  margin: 0;
+  padding-left: 21px;
+  padding-top: 26px;
+  font-weight: 700;
+}
+
+.price__last {
+  @include font($fs_14, $lh_18);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 12px;
+  font-weight: 400;
+
+  &::after {
+    @include before;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text_white);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 10;
+  }
+}

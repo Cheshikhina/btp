@@ -12,7 +12,6 @@ body {
   word-wrap: normal;
   color: var(--text_dark);
   background-color: var(--bg_light);
-  // overflow-x: hidden;
 }
 
 main {
@@ -57,4 +56,82 @@ img {
   overflow-y: hidden;
   position: fixed;
   width: 100%;
+}
+
+.body_overlay {
+  &::before {
+    @include before;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+}
+
+input:focus:required {
+  &:invalid {
+    box-shadow: 0 0 0 1px var(--accent_main) inset;
+  }
+
+  &:valid {
+    box-shadow: none;
+  }
+}
+
+[data-form] {
+  position: relative;
+  overflow: hidden;
+
+  div {
+    position: relative;
+
+    &>span {
+      @include font($fs_10, $lh_14);
+      position: absolute;
+      top: 3px;
+      left: 21px;
+      color: var(--accent_main);
+      font-weight: 600;
+      transition: opacity $duration_03;
+      animation: opacity $duration_03;
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &>span.message {
+    @include flex_center(1);
+    @include footer_title;
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg_dark_message);
+    color: var(--text_white);
+    animation: opacity $duration_03 forwards;
+  }
+
+  &>span.delete {
+    opacity: 0;
+    transition: opacity $duration_03;
+  }
+
+  &>span.error {
+    color: var(--error_message);
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+  input,
+  textarea {
+    font-size: rem(16) !important;
+  }
 }

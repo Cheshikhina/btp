@@ -1,7 +1,6 @@
 .user {
   @include flex_center;
   position: relative;
-
 }
 
 .user__img {
@@ -30,7 +29,7 @@
 
   span {
     display: inline-block;
-    margin-right: 19px;
+    margin-right: 24px;
   }
 
   svg {

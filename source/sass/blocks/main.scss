@@ -26,6 +26,7 @@
 }
 
 .main__text {
+  @include font($fs_12, $lh_15);
   margin: 0;
 }
 

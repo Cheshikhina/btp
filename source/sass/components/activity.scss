@@ -7,7 +7,6 @@
   min-height: 255px;
   margin: 15px;
   border-radius: $br_06;
-  padding: 24px 26px;
   color: var(--text_white);
   overflow: hidden;
 }
@@ -23,8 +22,7 @@
 
 .activity__title {
   @include font($fs_16, $lh_20);
-  margin: 0;
-  margin-bottom: 18px;
+  margin: 24px 26px 18px;
 }
 
 .activity__btn {
@@ -32,6 +30,7 @@
   width: max-content;
   max-width: 200px;
   padding: 7px 21px;
+  margin: 0 26px 24px;
   font-weight: 600;
 }
 
@@ -43,6 +42,7 @@
 
 @media (max-width: $mobile_max) {
     .activity {
-      width: calc(100% - 30px);
+      width: auto;
+      margin: 0;
     }
 }

@@ -9,7 +9,7 @@
 
 .reviews_slider__btn {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 19px);
   width: 40px;
   height: 40px;
   transform: translateY(-50%);

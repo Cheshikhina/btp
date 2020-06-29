@@ -1,0 +1,365 @@
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg_overlay);
+  z-index: -100;
+  transition: $duration_03 $duration_07;
+}
+
+.modal__content {
+  @include modal_text;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px;
+  min-height: 400px;
+  padding: 64px 66px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  border-radius: $br_08;
+  background-color: var(--bg_dark);
+  color: var(--text_white);
+  transition: $duration_03;
+  overflow: hidden;
+}
+
+.modal__close {
+  @include button;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform $duration_03;
+
+  &::before,
+  &::after {
+    @include before;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text_white);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &:active {
+    opacity: $opacity;
+  }
+}
+
+.modal__title {
+  @include title;
+  display: block;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.modal__desc {
+  @include modal_text;
+
+  &+.modal__title {
+    text-align: center;
+  }
+}
+
+.modal__inner {
+  @include flex_center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  overflow: visible;
+}
+
+.modal__inner--hotel {
+  margin-bottom: 0;
+
+  form {
+    @include flex_center;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.modal__card_number {
+  @include container(355);
+  @include flex_center;
+  position: relative;
+  flex-grow: 1;
+  height: 140px;
+  border: 1px solid var(--text_white);
+  border-radius: $br_08;
+  margin: 0;
+  padding: 15px 25px;
+
+  span {
+    font-size: rem($fs_18);
+    display: flex;
+    font-weight: 700;
+    margin: auto 0 0 auto;
+  }
+
+  img {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: 42px;
+    height: 18px;
+  }
+}
+
+.modal__card_btn {
+  margin-left: 20px;
+}
+
+.modal__card_btn,
+.modal__btn {
+  padding: 11px 26px 13px;
+  max-width: 190px;
+}
+
+.modal__btn {
+  margin: auto auto 0;
+}
+
+.modal__subtitle {
+  @include footer_title;
+  margin: 0;
+  margin-bottom: 20px;
+
+  &~.modal__title {
+    text-align: center;
+  }
+}
+
+.modal__images {
+  width: calc(60% - 10px);
+  height: 0;
+  padding-bottom: 30%;
+}
+
+.modal__box {
+  @include flex_center(1);
+  flex-direction: column;
+  width: calc(40% - 10px);
+}
+
+.modal__text {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.modal__text--room {
+  @include flex_center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 25px;
+
+  label {
+    min-width: 70px;
+  }
+
+  input {
+    display: block;
+    max-width: 49px;
+    min-width: 45px;
+    order: -1;
+    padding: 5px;
+    background-color: var(--bg_light);
+    color: var(--text_dark);
+    border: none;
+    -webkit-appearance: none;
+    border-radius: $br_04;
+    outline: 0;
+    margin-right: 5px;
+    text-align: center;
+    resize: none;
+    transition: $transition;
+
+    @each $placeholder in $placeholders_dots {
+      &::#{$placeholder} {
+        transition: opacity $duration_03;
+      }
+    }
+
+    @each $placeholder in $placeholders_dot {
+      &:#{$placeholder} {
+        transition: opacity $duration_03;
+      }
+    }
+
+    &:focus {
+
+      @each $placeholder in $placeholders_dots {
+        &::#{$placeholder} {
+          opacity: 0;
+        }
+      }
+
+      @each $placeholder in $placeholders_dot {
+        &::#{$placeholder} {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.modal__phone {
+  width: 75%;
+  margin: 25px auto;
+
+  input {
+    @include footer_input;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 18px 23px 17px;
+    margin-bottom: 15px;
+    background-color: var(--bg_light);
+    border: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border-radius: $br_04;
+    outline: 0;
+    resize: none;
+    transition: $transition;
+
+    @each $placeholder in $placeholders_dots {
+      &::#{$placeholder} {
+        @include footer_input(1);
+        transition: opacity $duration_03;
+      }
+    }
+
+    @each $placeholder in $placeholders_dot {
+      &:#{$placeholder} {
+        @include footer_input(1);
+        transition: opacity $duration_03;
+      }
+    }
+
+    &:focus {
+
+      @each $placeholder in $placeholders_dots {
+        &::#{$placeholder} {
+          opacity: 0;
+        }
+      }
+
+      @each $placeholder in $placeholders_dot {
+        &:#{$placeholder} {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.modal--open {
+  opacity: 1;
+  z-index: 150;
+  transition: $duration_03;
+}
+
+.modal__content--open {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: $duration_03 $duration_07;
+}
+
+@media (max-width: $mobile_max) {
+  .modal {
+    align-items: flex-start;
+    padding: 85px 16px 67px;
+    overflow-y: auto;
+  }
+
+  .modal__content {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    padding: 58px 19px 52px;
+    border-radius: 0;
+    top: 0;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .modal__close {
+    top: 14px;
+    right: 15px;
+  }
+
+  .modal__title {
+    margin-bottom: 30px;
+  }
+
+  .modal__card {
+    flex-direction: column;
+  }
+
+  .modal__card_btn {
+    margin-top: 15px;
+    margin-left: 0;
+  }
+
+  .modal__btn--gift {
+    display: none;
+  }
+
+  .modal__inner {
+    flex-direction: column;
+  }
+
+  .modal__images {
+    @include container(400);
+    width: 100%;
+    padding-bottom: 40%;
+  }
+
+  .modal__box {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100px;
+  }
+
+  .modal__text--room {
+    margin-bottom: 0;
+    width: max-content;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal__images {
+    padding-bottom: 50%;
+  }
+}
+
+@media (min-width: $no_mobile) {
+
+  .modal__close:hover,
+  .modal__close:focus {
+    transform: rotate(135deg);
+  }
+}

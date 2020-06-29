@@ -1,5 +1,5 @@
 .activities {
-  margin-bottom: 68px;
+  margin-bottom: 83px;
 }
 
 .activities__title {
@@ -7,15 +7,17 @@
   margin-bottom: 42px;
 }
 
-.activities__inner {
+.activities__slider {
   @include flex_center;
   flex-wrap: wrap;
   width: calc(100% + 30px);
   margin: 0 -15px;
-}
+  overflow-x: hidden;
 
-.activities__slider {
-  overflow: hidden;
+  &>div {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: $mobile_max) {
@@ -26,5 +28,15 @@
   .activities__title {
     @include title;
     margin-bottom: 15px;
+  }
+
+  .activities__slider {
+    width: calc(100% + 15px);
+    margin: 0;
+    margin-right: -15px;
+
+    &>div {
+      flex-wrap: nowrap;
+    }
   }
 }
